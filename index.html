@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personl Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/61870b087a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#portfolio">PROJECTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>UI/UX Designer</p>
+            <h1>Hi, I'm <span>Namgay</span><br><Span>Wangchuk</Span><br>currently pursuing <br><span>BE Software Engineering</span></h1>
+        </div>
+    </div>
+</div>
+
+<!-- about me -->
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Images/myself.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">ABOUT ME</h1>
+                <p>I love tackling challenges with technology. My goal is to build helpful and user-friendly applications. I enjoy working with others to bring ideas to life and always look for ways to grow and learn. I focus on creating well-designed and scalable systems that make a positive impact.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                </div>
+                <div class="tab-contents active-tab" id="education">
+                    <ul>
+                        <li><span>High Schooling</span><br>Gaselo Higher Secondary School   (2017-2022)</li>
+                        <li><span>Undergraduates</span><br>BE in Software Engineering     (2023-Present)</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Web Development</span><br>Designing Web/App interfaces</li>
+                        <li><span>Database Management</span><br>Database Optimization and Implementations</li>
+                        <li><span>Machine and Deep Learning</span><br>Training and Teasting Models</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="skills">
+                    <ul>
+                        <li><span>Database Management</span><br> Experience with creating, managing, and optimizing relational and non-relational databases using technologies like MySQL, PostgreSQL, and MongoDB.</li>
+                        <li><span>Web Development</span><br>Experience on building responsive and dynamic web applications with user-friendly design and performance optimization using frontend and backend technologies.
+                        </li>
+                        <li><span>Machine Learning and Deep Learning</span><br>Hands-on with building, training, and deploying machine learning and deep learning models using frameworks like TensorFlow and PyTorch.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- portfolio -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">MY PROJECTS</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="Images/omr_test_01.png">
+                <div class="layer">
+                    <h3>Bubble Sheet Corrector</h3>
+                    <p>Bubble sheet scanner and test grader using OMR, Python, and OpenCV</p>
+                    <a href="/home/namgaywangchuk/Desktop/Portfolio/Images/Bubblesheet(Group_2).ipynb"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/insta.jpg">
+                <div class="layer">
+                    <h3>Instagram clone</h3>
+                    <p>Full stack web development using MERN(Mongodb, Express, React and Node.js)</p>
+                    <a href=""><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/pokemon1.png">
+                <div class="layer">
+                    <h3>Pokedex</h3>
+                    <p>Pokedex web application using Vanilla js. No use of third party libraries.</p>
+                    <a href="https://github.com/Namgay282004/02230290_WEB101_PA1"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+<!-- contact -->
+<div id="contact" class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">CONTACT</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>02230290.cst@rub.edu.bt</p>
+                <p><i class="fa-solid fa-phone-volume"></i>+975-17333748</p>
+                <div class="social-icons">
+                    <a href="https://github.com/Namgay282004"><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:02230290.cst@rub.edu.bt"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/namgay_2004?igsh=cmIzeGVuOWdza2M1"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="Images/Namgay's CV.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>
