@@ -88,7 +88,7 @@
                 <div class="layer">
                     <h3>Instagram clone</h3>
                     <p>Full stack web development using MERN(Mongodb, Express, React and Node.js)</p>
-                    <a href=""><i class="fa-solid fa-link"></i></a>
+                    <!-- <a href=""><i class="fa-solid fa-link"></i></a> -->
                 </div>
             </div>
             <div class="work">
@@ -121,12 +121,13 @@
                 <a href="Images/Namgay's CV.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right">
-                <form>
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
@@ -147,6 +148,7 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
 </script>
+
 <script>
     var sidemenu = document.getElementById("sidemenu");
 
@@ -157,5 +159,25 @@
         sidemenu.style.right = "-200px";
     }
 </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyE-ngNka8dRqVMjrEHlSJvdgUz2sP3FSuZw-GGlyPSUinA1yLThFqmNOaaYDbtlTkBNQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Form submitted successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
 </body>
 </html>
